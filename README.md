@@ -1,1 +1,2 @@
 # LegalMind
+# LegalMind
