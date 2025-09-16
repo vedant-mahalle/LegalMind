@@ -10,39 +10,6 @@ export function Navigation() {
 
   return (
     <header className="w-full">
-      <div className="bg-slate-50 border-b border-slate-200 py-2">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between text-sm">
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2">
-                <Scale className="h-4 w-4 text-slate-600" />
-                <span className="text-slate-700 font-medium">Official Legal Notice Generator</span>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <button className="flex items-center space-x-1 text-slate-600 hover:text-slate-800 transition-colors">
-                <Globe className="h-4 w-4" />
-                <span>EN</span>
-              </button>
-              <button
-                className="flex items-center space-x-1 text-slate-600 hover:text-slate-800 transition-colors"
-                title="Increase font size"
-              >
-                <Type className="h-4 w-4" />
-                <span className="sr-only">Font Size</span>
-              </button>
-              <button
-                className="flex items-center space-x-1 text-slate-600 hover:text-slate-800 transition-colors"
-                title="High contrast"
-              >
-                <Contrast className="h-4 w-4" />
-                <span className="sr-only">High Contrast</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div className="sticky top-0 z-50 w-full border-b bg-white shadow-sm">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           {/* Logo */}
@@ -67,9 +34,9 @@ export function Navigation() {
             <Link href="/templates" className="text-slate-700 hover:text-blue-600 transition-colors font-medium">
               Templates
             </Link>
-            <Link href="/prompt" className="text-slate-700 hover:text-blue-600 transition-colors font-medium">
+            {/* <Link href="/prompt" className="text-slate-700 hover:text-blue-600 transition-colors font-medium">
               Prompt Mode
-            </Link>
+            </Link> */}
             <Link href="/about" className="text-slate-700 hover:text-blue-600 transition-colors font-medium">
               About
             </Link>

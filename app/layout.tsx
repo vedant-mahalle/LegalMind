@@ -33,9 +33,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans antialiased ${publicSans.variable} ${sourceSerif.variable}`}>
-        <a href="#main-content" className="skip-link">
-          Skip to main content
-        </a>
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>

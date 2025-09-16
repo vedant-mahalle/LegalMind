@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -31,6 +31,10 @@ interface WizardData {
   urgency: string
 }
 
+interface LegalNoticeWizardProps {
+  initialPrompt?: string
+}
+
 const urgencyLevels = [
   { value: "low", label: "Standard (30+ days)", color: "bg-green-100 text-green-800" },
   { value: "medium", label: "Urgent (7-30 days)", color: "bg-yellow-100 text-yellow-800" },
@@ -45,16 +49,22 @@ const steps = [
   { title: "Generate Notice", description: "Review and generate your notice" },
 ]
 
-export function LegalNoticeWizard() {
+export function LegalNoticeWizard({ initialPrompt = "" }: LegalNoticeWizardProps) {
   const [currentStep, setCurrentStep] = useState(0)
   const [formData, setFormData] = useState<WizardData>({
-    prompt: "",
+    prompt: initialPrompt,
     senderName: "",
     recipientName: "",
     jurisdiction: "",
     deadline: "",
     urgency: "",
   })
+
+  useEffect(() => {
+    if (initialPrompt) {
+      setFormData((prev) => ({ ...prev, prompt: initialPrompt }))
+    }
+  }, [initialPrompt])
 
   const [generatedNotice, setGeneratedNotice] = useState("")
   const [context, setContext] = useState<any[]>([])
